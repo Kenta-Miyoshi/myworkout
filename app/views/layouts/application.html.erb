@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Microposts</title>
+    <title>Myworkout</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -19,11 +19,8 @@
 
   <body>
     <%= render 'layouts/navbar' %>
-
-    <div class="container">
-      <%= render 'layouts/flash_message' %>
-
-      <%= yield %>
+    <%= render 'layouts/flash_message' %>
+    <%= yield %>
     </div>
   </body>
 </html>

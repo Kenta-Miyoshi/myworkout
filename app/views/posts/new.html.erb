@@ -1,0 +1,33 @@
+<div class="text-center">
+  <h1>Workoutを登録</h1>
+</div>
+
+<% if logged_in? %>
+  <div class = "row">
+    <div class = "col-sm-6 offset-3">
+      <%= form_with(model: @post, local: true) do |f| %>
+        
+        <div class= "form-group">
+          <%= f.label :title, '部位' %>
+          <%= f.text_field :title, class: 'form-control' %>
+        </div>
+        
+        <div class = "form-group">
+          <%= f.label :content, 'トレーニング内容' %>
+          <%= f.text_field :content, class: 'form-control' %>
+        </div>
+        
+        <div class = "form-group">
+          <%= f.label :img, '画像' %>
+          <%= f.file_field :img, class: 'form-control' %>
+        </div>
+        
+        <%= f.submit '投稿', class: 'btn btn-primary btn-block' %>
+        
+      <% end %>
+    </div>
+  </div>
+<% else %>
+  <h1>ログインしてください</h1>
+  <%= link_to 'ログイン',login_path %>
+<% end %>

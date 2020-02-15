@@ -1,9 +1,14 @@
 class UsersController < ApplicationController
+  before_action :require_user_logged_in, only: [:show]
+  before_action :correct_user, only: [:show]
   def index
+    
   end
 
   def show
     @user=User.find(params[:id])
+    @posts = @user.posts.order(id: :desc).page(params[:page])
+    
   end
 
   def new
@@ -11,7 +16,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user=User.save(user_params)
+    @user=User.new(user_params)
     
     if @user.save
       flash[:success]='ユーザーを登録しました'
@@ -37,8 +42,8 @@ class UsersController < ApplicationController
       render :edit
     end
   end
-end
-
+  
+  
 
   private
   
@@ -46,3 +51,12 @@ end
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
   
+  def correct_user
+    @user = User.find(params[:id])                                           
+    unless @user == current_user
+     redirect_to @current_user
+    end
+  end
+  
+  
+end

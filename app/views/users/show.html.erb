@@ -1,2 +1,19 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+  <% @posts.each do |post| %>
+    <div class='media-body'>
+      <div>
+        <span class='text-muted'><%= post.created_at %></span>
+      </div>
+      <div>
+        <h2><%= post.title %></h2>
+        <p><%= post.content %></p>
+        <p>
+          <% if post.img_url %>
+            <%= image_tag post.img_url %>
+          <% end %>
+        </p>
+        <% if current_user == post.user %>
+          <%= link_to "Delete", post, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-sm' %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
