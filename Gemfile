@@ -57,4 +57,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'kaminari'
 gem 'bcrypt','~> 3.1.7'
 gem 'carrierwave', '~> 1.3', '>= 1.3.1'
-gem 'mini_magick'
+gem 'mini_magick', '~> 4.8'

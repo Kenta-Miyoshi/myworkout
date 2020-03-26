@@ -17,6 +17,8 @@ require "sprockets/railtie"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+
+
 module Myworkout
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
@@ -29,5 +31,6 @@ module Myworkout
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+    config.time_zone = 'Tokyo'
   end
 end

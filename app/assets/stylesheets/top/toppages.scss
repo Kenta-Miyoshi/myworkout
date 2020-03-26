@@ -8,22 +8,58 @@ body {
   background-image: url("running-573762_1920.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  
+}
+
+@media only screen and (max-width: 767px) {
+  body {
+    background-image: url("running-573762_19201.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
 }
 
 .main{
   margin-top: 25%;
   margin-left: 15%;
+  color: white;
 }
 
 h1 {
   opacity: 50%;
   font-size: 80px;
-  
 }
 
 p {
-  opacity: 50%;
+  opacity: 38%;
   font-size: 20px;
-  
 }
+
+@media only screen and (max-width: 767px) {
+  h1 {
+    font-size: 35px;
+    opacity: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+  
+  p{
+    font-size: 18px;
+    opacity: 38%;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+  
+  .main {
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 60%;
+    text-align: center;
+  }
+  
+  button{
+    opacity: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+}
+
